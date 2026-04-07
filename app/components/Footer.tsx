@@ -26,8 +26,8 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-slate-400">
-              Active Dispatchable flexible compute, co-located behind the meter
-              with utility-scale renewables across Chile&apos;s SEN.
+              Active Dispatchable flexible compute, co-located behind the
+              meter with utility-scale solar and battery storage.
             </p>
           </div>
 
@@ -49,7 +49,7 @@ export default function Footer() {
                   href="/#solution"
                   className="text-slate-300 hover:text-white"
                 >
-                  Our SGC Solution
+                  Our Solution
                 </Link>
               </li>
               <li>
@@ -92,7 +92,6 @@ export default function Footer() {
                   contact@portercollins.com
                 </a>
               </li>
-              <li className="text-slate-400">Santiago, Chile</li>
               <li>
                 <Link
                   href="/contact"
@@ -108,8 +107,8 @@ export default function Footer() {
         <div className="mt-14 flex flex-col gap-3 border-t border-navy-700/60 pt-8 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Porter/Collins. All rights reserved.</p>
           <p>
-            Sistema Generación-Consumo · Operating under Chilean Law 21.505 ·
-            Article 116 quater (DS 125)
+            Behind-the-meter flexible compute · Engineered for utility-scale
+            solar &amp; storage worldwide
           </p>
         </div>
       </div>

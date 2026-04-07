@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 const NAV_LINKS = [
   { href: "/#problem", label: "The Decoupling Problem" },
-  { href: "/#solution", label: "Our SGC Solution" },
+  { href: "/#solution", label: "Our Solution" },
   { href: "/#capacity", label: "Capacity Protection" },
   { href: "/#partnership", label: "Partnership Model" },
   { href: "/#esg", label: "ESG" },

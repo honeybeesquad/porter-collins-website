@@ -1,6 +1,6 @@
 # Porter/Collins — Corporate Website
 
-Institutional marketing site for Porter/Collins, an operator of behind-the-meter flexible compute (Bitcoin validators + HPC) co-located with utility-scale renewables in Chile.
+Institutional marketing site for Porter/Collins, an operator of behind-the-meter flexible compute (Bitcoin validators + HPC) co-located with utility-scale solar and battery storage globally.
 
 Stack: **Next.js 14 (App Router) · React 18 · TypeScript · Tailwind CSS**
 
@@ -56,7 +56,7 @@ app/
     ├── Footer.tsx
     ├── Hero.tsx                Section 1
     ├── ProblemSection.tsx      Section 2 — Decoupling Crisis
-    ├── SolutionSection.tsx     Section 3 — SGC Framework
+    ├── SolutionSection.tsx     Section 3 — Behind-the-Meter Solution
     ├── OperationsSection.tsx   Section 4 — 15-min arbitrage + capacity guarantee
     ├── PartnershipSection.tsx  Section 5 — Zero CAPEX / Asset Rotation
     ├── ESGSection.tsx          Section 6 — Compliance & Grid Safety

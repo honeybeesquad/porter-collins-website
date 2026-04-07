@@ -26,7 +26,7 @@ export default function Hero() {
 
       <div className="container-px relative">
         <p className="eyebrow-on-dark">
-          Behind-the-Meter Flexible Compute · Chile
+          Behind-the-Meter Flexible Compute for Utility-Scale Renewables
         </p>
         <h1
           id="hero-title"
@@ -36,7 +36,7 @@ export default function Hero() {
           <br className="hidden sm:block" />
           <span className="text-white">Stabilizing the </span>
           <span className="relative inline-block">
-            <span className="relative z-10 text-white">Chilean Grid.</span>
+            <span className="relative z-10 text-white">Grid.</span>
             <span
               aria-hidden="true"
               className="absolute inset-x-0 bottom-1 -z-0 h-3 bg-accent-500/50"
@@ -46,9 +46,10 @@ export default function Hero() {
 
         <p className="mt-7 max-w-3xl text-lg leading-relaxed text-slate-300 sm:text-xl">
           Porter/Collins builds Active Dispatchable compute loads that
-          co-locate behind the meter with utility-scale renewables. We
-          transform <span className="text-white font-semibold">$0/MWh</span>{" "}
-          curtailed solar into predictable revenue while perfectly protecting
+          co-locate behind the meter with utility-scale solar and battery
+          storage. We transform{" "}
+          <span className="text-white font-semibold">curtailed daytime</span>{" "}
+          generation into predictable revenue — while perfectly protecting
           your capacity payments.
         </p>
 
@@ -57,7 +58,7 @@ export default function Hero() {
             Partner With Us →
           </Link>
           <Link href="#solution" className="btn-secondary">
-            View Our SGC Architecture
+            View Our Architecture
           </Link>
         </div>
 
@@ -65,26 +66,26 @@ export default function Hero() {
         <div className="mt-20 grid gap-px rounded-xl border border-navy-700 bg-navy-700 sm:grid-cols-3 lg:mt-24">
           <div className="bg-navy-900 p-7">
             <p className="font-display text-3xl font-semibold text-white sm:text-4xl">
-              6,000<span className="text-accent-500">+</span> GWh
+              TWh-scale
             </p>
             <p className="mt-2 text-sm text-slate-400">
-              Renewable energy curtailed in the SEN, 2025
+              Annual solar curtailment in every mature solar grid
             </p>
           </div>
           <div className="bg-navy-900 p-7">
             <p className="font-display text-3xl font-semibold text-white sm:text-4xl">
-              0 MW <span className="text-accent-500">·</span> 18:00–22:00
+              0 MW <span className="text-accent-500">·</span> Evening Peak
             </p>
             <p className="mt-2 text-sm text-slate-400">
-              Guaranteed hard shutoff during peak grid stress hours
+              Guaranteed hard shutoff during net-peak hours
             </p>
           </div>
           <div className="bg-navy-900 p-7">
             <p className="font-display text-3xl font-semibold text-white sm:text-4xl">
-              Law 21.505
+              Behind the Meter
             </p>
             <p className="mt-2 text-sm text-slate-400">
-              Sistema Generación-Consumo, regulator-aligned
+              Co-located, zero grid withdrawal during operation
             </p>
           </div>
         </div>

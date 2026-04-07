@@ -1,7 +1,7 @@
 import SectionHeading from "./SectionHeading";
 
 const BENEFITS = [
-  "Zero capital outlay required from the generator",
+  "Zero capital outlay required from the host",
   "Fixed off-take on otherwise curtailed daytime hours",
   "Improved Enterprise Value on hybrid solar + BESS SPVs",
   "Highly bankable for institutional asset rotation exits",
@@ -34,8 +34,7 @@ export default function PartnershipSection() {
               for generators. We sign a behind-the-meter PPA for the daytime
               solar production that would otherwise be curtailed, deploy and
               operate the compute infrastructure on our own balance sheet,
-              and pay the generator a fixed off-take regardless of spot
-              conditions.
+              and pay the host a fixed off-take regardless of spot conditions.
             </p>
             <p>
               The hybrid SPV gains a{" "}
@@ -49,19 +48,20 @@ export default function PartnershipSection() {
                 bankability for institutional exit sales
               </strong>{" "}
               — the core thesis underpinning every asset rotation strategy in
-              the LATAM renewables space.
+              the global renewables space.
             </p>
             <p>
               No additional capital. No lender consent risk on grid usage. No
               cannibalization of capacity revenues. Just a cleaner SPV cash
-              flow profile and a more bankable exit.
+              flow profile and a more bankable exit — wherever your assets
+              sit.
             </p>
           </div>
 
           <div className="lg:col-span-2">
             <div className="rounded-2xl border border-slate-200 bg-white p-7 shadow-card">
               <p className="font-display text-[12px] font-medium uppercase tracking-eyebrow text-accent-600">
-                What the generator gets
+                What the host gets
               </p>
               <ul className="mt-5 space-y-4">
                 {BENEFITS.map((b) => (

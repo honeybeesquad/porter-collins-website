@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 export const metadata: Metadata = {
   title: "Partner With Us",
   description:
-    "Open a confidential conversation with Porter/Collins about behind-the-meter co-location at curtailed Chilean renewable sites.",
+    "Open a confidential conversation with Porter/Collins about behind-the-meter co-location at utility-scale solar and BESS sites.",
 };
 
 const TRACKS = [
@@ -15,7 +15,7 @@ const TRACKS = [
   },
   {
     label: "Regulatory & legal review",
-    body: "SGC framework documentation, Article 116 quater positioning, and CEN coordination for counsel and compliance teams.",
+    body: "Self-supply framework documentation, jurisdiction-specific positioning, and system operator coordination for counsel and compliance teams.",
   },
   {
     label: "Technical due diligence",
@@ -54,9 +54,9 @@ export default function ContactPage() {
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">
               Porter/Collins works directly with Tier-1 renewable energy
-              conglomerates, their counsel, and institutional sponsors
-              evaluating behind-the-meter flexible compute at curtailed
-              Chilean sites. Conversations are confidential by default.
+              operators, their counsel, and institutional sponsors evaluating
+              behind-the-meter flexible compute at utility-scale solar and
+              BESS sites worldwide. Conversations are confidential by default.
             </p>
           </div>
         </section>
@@ -81,9 +81,6 @@ export default function ContactPage() {
               >
                 contact@portercollins.com
               </a>
-              <p className="mt-6 text-sm text-slate-500">
-                Or write to us by post: Santiago, Chile
-              </p>
             </div>
 
             {/* Tracks */}

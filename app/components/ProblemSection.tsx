@@ -12,55 +12,54 @@ export default function ProblemSection() {
         <SectionHeading
           eyebrow="The Problem"
           id="problem-title"
-          title={
-            <>
-              The Decoupling Crisis
-              <br className="hidden sm:block" /> in the SEN
-            </>
-          }
+          title={<>The Decoupling Crisis</>}
+          lede="Solar and battery storage are the Swiss Army knife of the modern energy transition. Every grid that scales them runs into the same structural wall."
         />
 
         <div className="mt-16 grid gap-12 lg:grid-cols-5 lg:gap-16">
           <div className="lg:col-span-3">
             <div className="prose-slate space-y-6 text-slate-700">
               <p className="text-lg leading-relaxed">
-                Chile&apos;s Sistema Eléctrico Nacional (SEN) is choking on its
-                own success. Transmission infrastructure has fallen years
-                behind the build-out of utility-scale solar in the north,
-                creating severe evacuation bottlenecks at the Crucero and
-                Cardones nodes.
+                Generation is being built faster than transmission can be
+                upgraded. Interconnection queues stretch years deep. The
+                result is the now-familiar{" "}
+                <strong className="text-navy-900">duck curve</strong>: massive
+                midday solar surpluses with nowhere to go, followed by a
+                steep evening ramp that strains the same grid the surplus
+                could not relieve.
               </p>
               <p className="text-lg leading-relaxed">
-                In 2025 alone, <strong className="text-navy-900">over
-                6,000 GWh</strong> of renewable energy was curtailed across
-                the SEN — concentrated in the Atacama and Antofagasta regions.
-                The result is extreme basis risk and chronic{" "}
-                <strong className="text-navy-900">$0/MWh daytime spot
-                pricing</strong> for solar generators sitting on stranded
-                megawatts they cannot evacuate.
+                Across mature solar markets — CAISO, ERCOT, Iberia, the
+                Australian NEM, and the fast-scaling LATAM and MENA grids —
+                operators are watching utility-scale solar plants curtail{" "}
+                <strong className="text-navy-900">GWh-by-GWh</strong> and
+                clear at <strong className="text-navy-900">zero or negative
+                prices</strong> during the very hours those assets were built
+                to monetize.
               </p>
               <p className="text-lg leading-relaxed">
-                Capital deployed against generation assets is producing zero
-                marginal revenue during the very hours those assets were
-                designed to monetize. The traditional remedy — wait for
-                transmission upgrades — runs on a multi-year horizon that
-                bondholders, sponsors, and asset rotation funds cannot accept.
+                Capital deployed against generation is producing zero marginal
+                revenue during the windows it was designed for. Waiting for
+                transmission upgrades is a multi-year horizon that
+                bondholders, sponsors, and asset rotation funds cannot
+                accept. The supply/demand mismatch is a permanent feature of
+                solar-led decarbonization, not a transient growing pain.
               </p>
             </div>
           </div>
 
           <div className="space-y-5 lg:col-span-2">
             <StatCard
-              value="6,000+ GWh"
-              label="Renewable curtailment across the SEN, 2025"
+              value="TWh-scale"
+              label="Annual solar curtailment across every mature market"
             />
             <StatCard
-              value="$0/MWh"
-              label="Daytime spot price at affected northern nodes"
+              value="≤ $0/MWh"
+              label="Negative daytime spot pricing now routine in solar-heavy zones"
             />
             <StatCard
-              value="2 nodes"
-              label="Crucero and Cardones — primary transmission bottlenecks"
+              value="Multi-year"
+              label="Typical horizon for transmission upgrade relief"
             />
           </div>
         </div>

@@ -31,17 +31,18 @@ export default function OperationsSection() {
         />
 
         <div className="mt-16 grid gap-10 lg:grid-cols-2 lg:gap-14">
-          {/* (a) 15-minute arbitrage */}
+          {/* (a) Settlement-aligned arbitrage */}
           <div className="card-on-dark">
             <p className="font-display text-[12px] font-medium uppercase tracking-eyebrow text-accent-400">
-              15-Minute Arbitrage Window
+              Settlement-Aligned Arbitrage
             </p>
             <h3 className="mt-3 font-display text-2xl font-semibold text-white">
-              Mapped to the CEN&apos;s measurement intervals
+              Mapped to the system operator&apos;s settlement intervals
             </h3>
             <p className="mt-4 leading-relaxed text-slate-300">
-              Our control system maps power draw to the CEN&apos;s 15-minute
-              measurement periods. Algorithmic load shedding executes in{" "}
+              Our control system maps power draw to the host market&apos;s
+              settlement intervals — whether that&apos;s 5-minute, 15-minute,
+              or 30-minute resolution. Algorithmic load shedding executes in{" "}
               <strong className="text-white">sub-millisecond response time</strong>
               , allowing the asset to consume only when curtailed energy is
               genuinely available — never displacing grid-bound generation,
@@ -50,7 +51,8 @@ export default function OperationsSection() {
 
             <ul className="mt-6 space-y-3 text-sm text-slate-300">
               <li className="flex items-start gap-3">
-                <Dot /> Real-time integration with the CEN dispatch signal
+                <Dot /> Real-time integration with the system operator&apos;s
+                dispatch signal
               </li>
               <li className="flex items-start gap-3">
                 <Dot /> Sub-millisecond load curtailment on price or signal
@@ -61,30 +63,31 @@ export default function OperationsSection() {
             </ul>
           </div>
 
-          {/* (b) 18:00–22:00 Hard Shutoff */}
+          {/* (b) Evening Net-Peak Hard Shutoff */}
           <div className="relative rounded-xl border border-accent-500/40 bg-gradient-to-br from-navy-800 to-navy-900 p-7">
             <div className="absolute inset-y-0 left-0 w-1 rounded-l-xl bg-accent-500" />
             <p className="font-display text-[12px] font-medium uppercase tracking-eyebrow text-accent-400">
               The Capacity Guarantee
             </p>
             <h3 className="mt-3 font-display text-2xl font-semibold text-white">
-              Scheduled Hard Shutoff: 18:00 – 22:00, Daily
+              Scheduled Hard Shutoff: Evening Net-Peak, Daily
             </h3>
             <p className="mt-4 leading-relaxed text-slate-300">
               We execute a{" "}
               <strong className="text-white">scheduled hard shutoff</strong>{" "}
-              during the grid&apos;s peak stress window every day. By
+              during the grid&apos;s evening net-peak window every day. By
               curtailing our load to{" "}
-              <strong className="text-white">0 MW</strong> from 18:00 to
-              22:00, we{" "}
+              <strong className="text-white">0 MW</strong> from{" "}
+              <strong className="text-white">18:00 to 22:00</strong> local
+              time, we{" "}
               <strong className="text-white">
                 guarantee zero cannibalization
               </strong>{" "}
-              of the generator&apos;s{" "}
-              <em className="text-slate-200">Potencia de Suficiencia</em>{" "}
-              capacity payments. Your BESS dispatches{" "}
+              of the host&apos;s capacity market revenues. Your BESS
+              dispatches{" "}
               <strong className="text-white">100% to the grid</strong> when
-              the SEN needs it most.
+              the system needs it most — exactly when capacity payments
+              clear.
             </p>
             <div className="mt-6 inline-flex items-center gap-2 rounded-md bg-accent-500/15 px-3 py-2 font-display text-xs font-semibold uppercase tracking-eyebrow text-accent-400">
               <svg
@@ -114,7 +117,7 @@ export default function OperationsSection() {
             Daily Profile
           </p>
           <h3 className="mt-2 font-display text-xl font-semibold text-white">
-            P/C compute load vs. BESS grid dispatch — 24h cycle
+            P/C compute load vs. BESS grid dispatch — 24h cycle (local time)
           </h3>
 
           <div className="mt-6 overflow-hidden">
@@ -122,7 +125,7 @@ export default function OperationsSection() {
               viewBox="0 0 800 240"
               className="h-auto w-full"
               role="img"
-              aria-label="24-hour profile showing Porter/Collins compute load peaking during midday solar hours and dropping to zero from 18:00 to 22:00, while BESS grid dispatch peaks during the same evening window."
+              aria-label="24-hour profile showing Porter/Collins compute load peaking during midday solar hours and dropping to zero from 18:00 to 22:00 local time, while BESS grid dispatch peaks during the same evening window."
             >
               {/* Grid lines */}
               <g stroke="#1E3A6B" strokeWidth="1">
@@ -232,7 +235,7 @@ export default function OperationsSection() {
             </div>
             <div className="flex items-center gap-2">
               <span className="inline-block h-3 w-5 rounded-sm border border-dashed border-accent-500/70" />
-              18:00–22:00 hard shutoff window
+              Evening net-peak (18:00–22:00 local)
             </div>
           </div>
         </div>

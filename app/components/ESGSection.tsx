@@ -2,8 +2,8 @@ import SectionHeading from "./SectionHeading";
 
 const PILLARS = [
   {
-    title: "AFCI-Compliant Infrastructure",
-    body: "Every Porter/Collins deployment incorporates SEC-mandated Arc-Fault Circuit Interrupters per the 2026 regulatory cycle, protecting site personnel and critical balance-of-system components.",
+    title: "Code-Compliant Electrical Infrastructure",
+    body: "Every Porter/Collins deployment meets international electrical safety standards — including arc-fault protection (IEC 62606 / NEC AFCI) and the current ground-fault and isolation requirements for the host jurisdiction.",
     icon: (
       <>
         <path
@@ -16,7 +16,7 @@ const PILLARS = [
   },
   {
     title: "Grid-Forming Inverter Compatible",
-    body: "Our integration model supports partner BESS facilities running grid-forming inverters that improve SEN voltage and frequency stability — strengthening the grid we share, not stressing it.",
+    body: "Our integration model supports partner BESS facilities running grid-forming inverters that improve local voltage and frequency stability — strengthening the grid we share, not stressing it.",
     icon: (
       <>
         <path
@@ -29,7 +29,7 @@ const PILLARS = [
   },
   {
     title: "Local Grid Security First",
-    body: "Operational protocols are designed around SEN reliability standards, worker safety, and full transparency with the CEN. Every shutoff, every dispatch, fully auditable.",
+    body: "Operational protocols are designed around the host system operator's reliability standards, worker safety, and full transparency. Every shutoff, every dispatch, fully auditable.",
     icon: (
       <>
         <path
@@ -55,11 +55,11 @@ export default function ESGSection() {
           id="esg-title"
           title={
             <>
-              Built to Strengthen the SEN,
+              Built to Strengthen the Grid,
               <br className="hidden sm:block" /> Not Stress It
             </>
           }
-          lede="Porter/Collins is engineered as a grid-stabilizing asset. Our regulatory, safety, and ESG commitments are designed to meet the institutional thresholds of Tier-1 sponsors, lenders, and asset rotation buyers."
+          lede="Porter/Collins is engineered as a grid-stabilizing asset. Our regulatory, safety, and ESG commitments are designed to meet the institutional thresholds of Tier-1 sponsors, lenders, and asset rotation buyers — in every jurisdiction we operate."
         />
 
         <div className="mt-16 grid gap-6 md:grid-cols-3">
@@ -96,8 +96,8 @@ export default function ESGSection() {
               </h3>
               <p className="mt-4 max-w-2xl text-slate-300">
                 For Tier-1 generators, regulatory counsel, and institutional
-                sponsors evaluating behind-the-meter co-location at curtailed
-                Chilean sites.
+                sponsors evaluating behind-the-meter co-location at
+                utility-scale solar and BESS sites worldwide.
               </p>
             </div>
             <div className="flex lg:justify-end">
