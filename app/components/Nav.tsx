@@ -9,7 +9,7 @@ const NAV_LINKS = [
   { href: "/#solution", label: "Our Solution" },
   { href: "/#capacity", label: "Capacity Protection" },
   { href: "/#partnership", label: "Partnership Model" },
-  { href: "/#esg", label: "ESG" },
+  { href: "/#sustainability", label: "Sustainability" },
 ];
 
 export default function Nav() {

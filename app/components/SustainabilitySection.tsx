@@ -1,9 +1,24 @@
+import type { ReactNode } from "react";
+import PCName from "./PCName";
 import SectionHeading from "./SectionHeading";
 
-const PILLARS = [
+type Pillar = {
+  title: string;
+  body: ReactNode;
+  icon: ReactNode;
+};
+
+const PILLARS: Pillar[] = [
   {
     title: "Code-Compliant Electrical Infrastructure",
-    body: "Every Porter/Collins deployment meets international electrical safety standards — including arc-fault protection (IEC 62606 / NEC AFCI) and the current ground-fault and isolation requirements for the host jurisdiction.",
+    body: (
+      <>
+        Every <PCName /> deployment meets international electrical safety
+        standards — including arc-fault protection (IEC 62606 / NEC AFCI)
+        and the current ground-fault and isolation requirements for the
+        host jurisdiction.
+      </>
+    ),
     icon: (
       <>
         <path
@@ -16,7 +31,13 @@ const PILLARS = [
   },
   {
     title: "Grid-Forming Inverter Compatible",
-    body: "Our integration model supports partner BESS facilities running grid-forming inverters that improve local voltage and frequency stability — strengthening the grid we share, not stressing it.",
+    body: (
+      <>
+        Our integration model supports partner BESS facilities running
+        grid-forming inverters that improve local voltage and frequency
+        stability — strengthening the grid we share, not stressing it.
+      </>
+    ),
     icon: (
       <>
         <path
@@ -29,7 +50,13 @@ const PILLARS = [
   },
   {
     title: "Local Grid Security First",
-    body: "Operational protocols are designed around the host system operator's reliability standards, worker safety, and full transparency. Every shutoff, every dispatch, fully auditable.",
+    body: (
+      <>
+        Operational protocols are designed around the host system
+        operator&apos;s reliability standards, worker safety, and full
+        transparency. Every shutoff, every dispatch, fully auditable.
+      </>
+    ),
     icon: (
       <>
         <path
@@ -42,24 +69,32 @@ const PILLARS = [
   },
 ];
 
-export default function ESGSection() {
+export default function SustainabilitySection() {
   return (
     <section
-      id="esg"
-      aria-labelledby="esg-title"
+      id="sustainability"
+      aria-labelledby="sustainability-title"
       className="bg-white py-24 sm:py-32"
     >
       <div className="container-px">
         <SectionHeading
-          eyebrow="Compliance & Grid Safety"
-          id="esg-title"
+          eyebrow="Sustainability & Grid Safety"
+          id="sustainability-title"
           title={
             <>
               Built to Strengthen the Grid,
               <br className="hidden sm:block" /> Not Stress It
             </>
           }
-          lede="Porter/Collins is engineered as a grid-stabilizing asset. Our regulatory, safety, and ESG commitments are designed to meet the institutional thresholds of Tier-1 sponsors, lenders, and asset rotation buyers — in every jurisdiction we operate."
+          lede={
+            <>
+              <PCName /> is engineered as a grid-stabilizing asset. Our
+              regulatory, safety, and sustainability commitments are
+              designed to meet the institutional thresholds of Tier-1
+              sponsors, lenders, and asset rotation buyers — in every
+              jurisdiction we operate.
+            </>
+          }
         />
 
         <div className="mt-16 grid gap-6 md:grid-cols-3">
@@ -92,7 +127,7 @@ export default function ESGSection() {
             <div className="lg:col-span-2">
               <p className="eyebrow-on-dark">Ready to align?</p>
               <h3 className="mt-3 font-display text-3xl font-semibold text-white sm:text-4xl">
-                Open a confidential conversation with Porter/Collins.
+                Open a confidential conversation with <PCName />.
               </h3>
               <p className="mt-4 max-w-2xl text-slate-300">
                 For Tier-1 generators, regulatory counsel, and institutional

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import PCName from "./PCName";
 
 export default function Footer() {
   return (
@@ -70,10 +71,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/#esg"
+                  href="/#sustainability"
                   className="text-slate-300 hover:text-white"
                 >
-                  ESG &amp; Compliance
+                  Sustainability
                 </Link>
               </li>
             </ul>
@@ -105,7 +106,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col gap-3 border-t border-navy-700/60 pt-8 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Porter/Collins. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} <PCName />. All rights reserved.</p>
           <p>
             Behind-the-meter flexible compute · Engineered for utility-scale
             solar &amp; storage worldwide

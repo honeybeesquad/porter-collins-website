@@ -1,3 +1,4 @@
+import PCName from "./PCName";
 import SectionHeading from "./SectionHeading";
 
 const BENEFITS = [
@@ -29,7 +30,7 @@ export default function PartnershipSection() {
         <div className="mt-16 grid gap-12 lg:grid-cols-5 lg:gap-16">
           <div className="space-y-6 text-lg leading-relaxed text-slate-700 lg:col-span-3">
             <p>
-              Porter/Collins offers a{" "}
+              <PCName /> offers a{" "}
               <strong className="text-navy-900">zero-CAPEX structure</strong>{" "}
               for generators. We sign a behind-the-meter PPA for the daytime
               solar production that would otherwise be curtailed, deploy and

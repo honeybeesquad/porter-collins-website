@@ -1,4 +1,5 @@
 import Link from "next/link";
+import PCName from "./PCName";
 
 export default function Hero() {
   return (
@@ -45,7 +46,7 @@ export default function Hero() {
         </h1>
 
         <p className="mt-7 max-w-3xl text-lg leading-relaxed text-slate-300 sm:text-xl">
-          Porter/Collins builds Active Dispatchable compute loads that
+          <PCName /> builds Active Dispatchable compute loads that
           co-locate behind the meter with utility-scale solar and battery
           storage. We transform{" "}
           <span className="text-white font-semibold">curtailed daytime</span>{" "}

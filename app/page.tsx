@@ -4,7 +4,7 @@ import ProblemSection from "./components/ProblemSection";
 import SolutionSection from "./components/SolutionSection";
 import OperationsSection from "./components/OperationsSection";
 import PartnershipSection from "./components/PartnershipSection";
-import ESGSection from "./components/ESGSection";
+import SustainabilitySection from "./components/SustainabilitySection";
 import Footer from "./components/Footer";
 
 export default function HomePage() {
@@ -17,7 +17,7 @@ export default function HomePage() {
         <SolutionSection />
         <OperationsSection />
         <PartnershipSection />
-        <ESGSection />
+        <SustainabilitySection />
       </main>
       <Footer />
     </>

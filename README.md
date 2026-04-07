@@ -37,7 +37,7 @@ npm run start
 
 | What | Where |
 |---|---|
-| Contact email | search `contact@portercollins.com` (used in `Footer.tsx`, `ESGSection.tsx`, `app/contact/page.tsx`) |
+| Contact email | search `contact@portercollins.com` (used in `Footer.tsx`, `SustainabilitySection.tsx`, `app/contact/page.tsx`) |
 | Logo | replace `public/logo.png` (square works best) |
 | Brand colors | `tailwind.config.ts` → `theme.extend.colors.navy` and `accent` |
 | Fonts | `app/layout.tsx` → `next/font/google` imports |
@@ -59,7 +59,7 @@ app/
     ├── SolutionSection.tsx     Section 3 — Behind-the-Meter Solution
     ├── OperationsSection.tsx   Section 4 — 15-min arbitrage + capacity guarantee
     ├── PartnershipSection.tsx  Section 5 — Zero CAPEX / Asset Rotation
-    ├── ESGSection.tsx          Section 6 — Compliance & Grid Safety
+    ├── SustainabilitySection.tsx  Section 6 — Sustainability & Grid Safety
     ├── SectionHeading.tsx      Reusable eyebrow + title + lede
     └── StatCard.tsx            Reusable metric block
 ```

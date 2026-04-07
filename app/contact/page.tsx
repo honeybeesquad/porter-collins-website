@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import PCName from "../components/PCName";
 
 export const metadata: Metadata = {
   title: "Partner With Us",
@@ -53,7 +54,7 @@ export default function ContactPage() {
               Partner With Us.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">
-              Porter/Collins works directly with Tier-1 renewable energy
+              <PCName /> works directly with Tier-1 renewable energy
               operators, their counsel, and institutional sponsors evaluating
               behind-the-meter flexible compute at utility-scale solar and
               BESS sites worldwide. Conversations are confidential by default.
@@ -69,7 +70,7 @@ export default function ContactPage() {
                 Direct line
               </p>
               <h2 className="mt-3 font-display text-2xl font-semibold text-navy-900 sm:text-3xl">
-                Reach the Porter/Collins partnerships team
+                Reach the <PCName /> partnerships team
               </h2>
               <p className="mt-4 text-slate-600">
                 Email is the fastest path. We respond within two business

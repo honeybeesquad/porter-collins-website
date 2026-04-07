@@ -1,3 +1,4 @@
+import PCName from "./PCName";
 import SectionHeading from "./SectionHeading";
 
 const PILLARS = [
@@ -64,7 +65,7 @@ export default function SolutionSection() {
           }
           lede={
             <>
-              Porter/Collins deploys flexible compute infrastructure directly
+              <PCName /> deploys flexible compute infrastructure directly
               behind the meter at utility-scale solar and BESS sites. By
               sitting inside the host facility&apos;s point of
               interconnection, our consumption is structured as{" "}
@@ -107,7 +108,7 @@ export default function SolutionSection() {
             host&apos;s capacity revenues at risk.&rdquo;
           </blockquote>
           <figcaption className="mt-5 font-display text-[12px] font-medium uppercase tracking-eyebrow text-slate-500">
-            Porter/Collins · Operating Principles, 2026
+            <PCName /> · Operating Principles, 2026
           </figcaption>
         </figure>
       </div>
