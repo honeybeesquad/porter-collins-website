@@ -1,48 +1,26 @@
+import Crosshair from "./Crosshair";
+import GridBackground from "./GridBackground";
 import PCName from "./PCName";
 import SectionHeading from "./SectionHeading";
 
 const PILLARS = [
   {
+    index: "A",
     title: "Behind-the-Meter Topology",
     body: "A single point of connection shared with your solar and BESS. Our consumption is private-wire by design and never appears on the system operator's withdrawal ledger.",
-    icon: (
-      <path
-        d="M3 12h4l2-7 4 14 2-7h6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    ),
+    meta: "Topology · BTM · single PoC",
   },
   {
+    index: "B",
     title: "Self-Supply Framework",
     body: "We operate within each jurisdiction's behind-the-meter and self-supply rules — engaging the local TSO, ISO, or regulator early and structuring our load to fit cleanly inside existing flexibility frameworks.",
-    icon: (
-      <>
-        <path
-          d="M12 3l8 4v6c0 5-3.5 7.5-8 8-4.5-.5-8-3-8-8V7l8-4z"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M9 12l2 2 4-4"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </>
-    ),
+    meta: "Framework · self-supply · regulator-aligned",
   },
   {
+    index: "C",
     title: "Universally Deployable",
     body: "The model works wherever solar generation outpaces transmission — from CAISO and ERCOT to the European interconnections, the Australian NEM, and the LATAM and MENA build-outs. Same physics, same arbitrage, same capacity discipline.",
-    icon: (
-      <>
-        <circle cx="12" cy="12" r="9" />
-        <path
-          d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"
-          strokeLinecap="round"
-        />
-      </>
-    ),
+    meta: "Coverage · global · jurisdiction-agnostic",
   },
 ];
 
@@ -51,16 +29,19 @@ export default function SolutionSection() {
     <section
       id="solution"
       aria-labelledby="solution-title"
-      className="bg-white py-24 sm:py-32"
+      className="relative overflow-hidden border-t border-navy-600 bg-navy-950 py-28 sm:py-36"
     >
-      <div className="container-px">
+      <GridBackground intensity="medium" size={72} />
+
+      <div className="container-px relative">
         <SectionHeading
+          index="03"
           eyebrow="The Solution"
           id="solution-title"
           title={
             <>
-              A Co-Located, Behind-the-Meter Asset
-              <br className="hidden sm:block" /> — Engineered for Every Grid
+              A Co-Located,
+              <br /> Behind-the-Meter Asset.
             </>
           }
           lede={
@@ -69,7 +50,7 @@ export default function SolutionSection() {
               behind the meter at utility-scale solar and BESS sites. By
               sitting inside the host facility&apos;s point of
               interconnection, our consumption is structured as{" "}
-              <strong className="text-navy-900">self-supply</strong> — never
+              <strong className="text-white">self-supply</strong> — never
               traversing the public grid, never triggering systemic
               withdrawal events, and never competing with the host&apos;s
               grid-bound dispatch.
@@ -77,38 +58,42 @@ export default function SolutionSection() {
           }
         />
 
-        <div className="mt-16 grid gap-6 md:grid-cols-3">
+        <div className="mt-20 grid gap-px md:grid-cols-3">
           {PILLARS.map((p) => (
-            <div key={p.title} className="card">
-              <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-accent-500/10 text-accent-600">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.75"
-                  className="h-6 w-6"
-                  aria-hidden="true"
-                >
-                  {p.icon}
-                </svg>
+            <div
+              key={p.title}
+              className="schematic-card group min-h-[320px]"
+            >
+              <Crosshair color="text-navy-500 group-hover:text-accent-500 transition-colors" />
+
+              <div className="font-mono text-[11px] font-semibold uppercase tracking-widest text-accent-500 tabular">
+                [ {p.index} ]
               </div>
-              <h3 className="mt-5 font-display text-xl font-semibold text-navy-900">
+
+              <h3 className="mt-5 font-display text-2xl font-semibold leading-tight text-white">
                 {p.title}
               </h3>
-              <p className="mt-3 leading-relaxed text-slate-600">{p.body}</p>
+
+              <p className="mt-4 leading-relaxed text-slate-300">{p.body}</p>
+
+              <div className="mt-7 h-px w-12 bg-navy-500" />
+              <p className="mt-3 font-mono text-[10px] uppercase tracking-widest text-navy-400">
+                {p.meta}
+              </p>
             </div>
           ))}
         </div>
 
-        <figure className="mt-16 rounded-2xl border-l-4 border-accent-500 bg-slate-50 p-8 sm:p-10">
-          <blockquote className="font-display text-xl font-medium leading-snug text-navy-900 sm:text-2xl">
+        {/* Pull-quote — schematic blockquote */}
+        <figure className="mt-20 max-w-4xl border-l-2 border-accent-500 pl-8 sm:pl-12">
+          <p className="mono-label">[ POSITION ]</p>
+          <blockquote className="mt-5 font-display text-2xl font-medium leading-[1.2] tracking-tight text-white sm:text-3xl">
             &ldquo;A behind-the-meter compute load is the only structurally
             clean way to monetize curtailed solar without putting the
             host&apos;s capacity revenues at risk.&rdquo;
           </blockquote>
-          <figcaption className="mt-5 font-display text-[12px] font-medium uppercase tracking-eyebrow text-slate-500">
-            <PCName /> · Operating Principles, 2026
+          <figcaption className="mt-6 font-mono text-[11px] uppercase tracking-widest text-navy-400">
+            <PCName /> &nbsp;·&nbsp; Operating Principles, 2026
           </figcaption>
         </figure>
       </div>

@@ -1,11 +1,28 @@
+import GridBackground from "./GridBackground";
 import PCName from "./PCName";
 import SectionHeading from "./SectionHeading";
 
 const BENEFITS = [
-  "Zero capital outlay required from the host",
-  "Fixed off-take on otherwise curtailed daytime hours",
-  "Improved Enterprise Value on hybrid solar + BESS SPVs",
-  "Highly bankable for institutional asset rotation exits",
+  {
+    code: "01",
+    text: "Zero capital outlay required from the host",
+    tag: "CAPEX",
+  },
+  {
+    code: "02",
+    text: "Fixed off-take on otherwise curtailed daytime hours",
+    tag: "REVENUE",
+  },
+  {
+    code: "03",
+    text: "Improved Enterprise Value on hybrid solar + BESS SPVs",
+    tag: "VALUATION",
+  },
+  {
+    code: "04",
+    text: "Highly bankable for institutional asset rotation exits",
+    tag: "EXIT",
+  },
 ];
 
 export default function PartnershipSection() {
@@ -13,25 +30,28 @@ export default function PartnershipSection() {
     <section
       id="partnership"
       aria-labelledby="partnership-title"
-      className="bg-slate-50 py-24 sm:py-32"
+      className="relative overflow-hidden border-t border-navy-600 bg-navy-950 py-28 sm:py-36"
     >
-      <div className="container-px">
+      <GridBackground intensity="medium" size={64} />
+
+      <div className="container-px relative">
         <SectionHeading
+          index="05"
           eyebrow="Partnership Model"
           id="partnership-title"
           title={
             <>
               Zero CAPEX.
-              <br className="hidden sm:block" /> Asset Rotation Ready.
+              <br /> Asset Rotation Ready.
             </>
           }
         />
 
-        <div className="mt-16 grid gap-12 lg:grid-cols-5 lg:gap-16">
-          <div className="space-y-6 text-lg leading-relaxed text-slate-700 lg:col-span-3">
+        <div className="mt-20 grid gap-16 lg:grid-cols-12 lg:gap-20">
+          <div className="space-y-7 text-lg leading-relaxed text-slate-300 lg:col-span-7">
             <p>
               <PCName /> offers a{" "}
-              <strong className="text-navy-900">zero-CAPEX structure</strong>{" "}
+              <strong className="text-white">zero-CAPEX structure</strong>{" "}
               for generators. We sign a behind-the-meter PPA for the daytime
               solar production that would otherwise be curtailed, deploy and
               operate the compute infrastructure on our own balance sheet,
@@ -39,13 +59,13 @@ export default function PartnershipSection() {
             </p>
             <p>
               The hybrid SPV gains a{" "}
-              <strong className="text-navy-900">
+              <strong className="text-white">
                 predictable, contracted revenue floor
               </strong>{" "}
               on previously stranded production. That floor flows directly
               into the asset&apos;s discounted cash flow model, boosting
               Enterprise Value and{" "}
-              <strong className="text-navy-900">
+              <strong className="text-white">
                 bankability for institutional exit sales
               </strong>{" "}
               — the core thesis underpinning every asset rotation strategy in
@@ -59,33 +79,28 @@ export default function PartnershipSection() {
             </p>
           </div>
 
-          <div className="lg:col-span-2">
-            <div className="rounded-2xl border border-slate-200 bg-white p-7 shadow-card">
-              <p className="font-display text-[12px] font-medium uppercase tracking-eyebrow text-accent-600">
-                What the host gets
-              </p>
-              <ul className="mt-5 space-y-4">
+          {/* Mono technical benefit list — stacked rows with leader rules */}
+          <div className="lg:col-span-5">
+            <div className="border border-navy-600 bg-navy-900/60 p-8">
+              <p className="mono-label">[ HOST RECEIVES ]</p>
+
+              <ul className="mt-7 divide-y divide-navy-600">
                 {BENEFITS.map((b) => (
                   <li
-                    key={b}
-                    className="flex items-start gap-3 text-[15px] text-slate-800"
+                    key={b.code}
+                    className="flex items-start gap-5 py-5 first:pt-0 last:pb-0"
                   >
-                    <span className="mt-0.5 inline-flex h-6 w-6 flex-none items-center justify-center rounded-full bg-accent-500/10 text-accent-600">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="h-3.5 w-3.5"
-                        aria-hidden="true"
-                      >
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
+                    <span className="font-mono text-[11px] font-semibold uppercase tracking-widest text-accent-500 tabular pt-1">
+                      {b.code}
                     </span>
-                    <span>{b}</span>
+                    <div className="flex-1">
+                      <p className="text-[15px] leading-snug text-white">
+                        {b.text}
+                      </p>
+                      <p className="mt-2 font-mono text-[10px] uppercase tracking-widest text-navy-400">
+                        {b.tag}
+                      </p>
+                    </div>
                   </li>
                 ))}
               </ul>

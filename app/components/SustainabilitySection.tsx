@@ -1,15 +1,19 @@
 import type { ReactNode } from "react";
+import Crosshair from "./Crosshair";
+import GridBackground from "./GridBackground";
 import PCName from "./PCName";
 import SectionHeading from "./SectionHeading";
 
 type Pillar = {
+  index: string;
   title: string;
   body: ReactNode;
-  icon: ReactNode;
+  tag: string;
 };
 
 const PILLARS: Pillar[] = [
   {
+    index: "A",
     title: "Code-Compliant Electrical Infrastructure",
     body: (
       <>
@@ -19,17 +23,10 @@ const PILLARS: Pillar[] = [
         host jurisdiction.
       </>
     ),
-    icon: (
-      <>
-        <path
-          d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </>
-    ),
+    tag: "IEC 62606 · NEC AFCI",
   },
   {
+    index: "B",
     title: "Grid-Forming Inverter Compatible",
     body: (
       <>
@@ -38,17 +35,10 @@ const PILLARS: Pillar[] = [
         stability — strengthening the grid we share, not stressing it.
       </>
     ),
-    icon: (
-      <>
-        <path
-          d="M3 12c4 0 4-7 8-7s4 14 8 14 4-7 8-7"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </>
-    ),
+    tag: "Grid-Forming · V/f stability",
   },
   {
+    index: "C",
     title: "Local Grid Security First",
     body: (
       <>
@@ -57,15 +47,7 @@ const PILLARS: Pillar[] = [
         transparency. Every shutoff, every dispatch, fully auditable.
       </>
     ),
-    icon: (
-      <>
-        <path
-          d="M12 3l8 4v6c0 5-3.5 7.5-8 8-4.5-.5-8-3-8-8V7l8-4z"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </>
-    ),
+    tag: "Auditable · Transparent",
   },
 ];
 
@@ -74,16 +56,19 @@ export default function SustainabilitySection() {
     <section
       id="sustainability"
       aria-labelledby="sustainability-title"
-      className="bg-white py-24 sm:py-32"
+      className="relative overflow-hidden border-t border-navy-600 bg-navy-900 py-28 sm:py-36"
     >
-      <div className="container-px">
+      <GridBackground intensity="soft" size={56} />
+
+      <div className="container-px relative">
         <SectionHeading
+          index="06"
           eyebrow="Sustainability & Grid Safety"
           id="sustainability-title"
           title={
             <>
-              Built to Strengthen the Grid,
-              <br className="hidden sm:block" /> Not Stress It
+              Built to Strengthen
+              <br /> the Grid, Not Stress It.
             </>
           }
           lede={
@@ -97,39 +82,53 @@ export default function SustainabilitySection() {
           }
         />
 
-        <div className="mt-16 grid gap-6 md:grid-cols-3">
+        <div className="mt-20 grid gap-px md:grid-cols-3">
           {PILLARS.map((p) => (
-            <div key={p.title} className="card">
-              <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-navy-900 text-accent-500">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.75"
-                  className="h-6 w-6"
-                  aria-hidden="true"
-                >
-                  {p.icon}
-                </svg>
+            <div
+              key={p.title}
+              className="schematic-card group min-h-[300px]"
+            >
+              <Crosshair color="text-navy-500 group-hover:text-accent-500 transition-colors" />
+
+              <div className="font-mono text-[11px] font-semibold uppercase tracking-widest text-accent-500 tabular">
+                [ {p.index} ]
               </div>
-              <h3 className="mt-5 font-display text-xl font-semibold text-navy-900">
+
+              <h3 className="mt-5 font-display text-xl font-semibold leading-snug text-white">
                 {p.title}
               </h3>
-              <p className="mt-3 leading-relaxed text-slate-600">{p.body}</p>
+
+              <p className="mt-4 text-[15px] leading-relaxed text-slate-300">
+                {p.body}
+              </p>
+
+              <div className="mt-7 h-px w-12 bg-navy-500" />
+              <p className="mt-3 font-mono text-[10px] uppercase tracking-widest text-navy-400">
+                {p.tag}
+              </p>
             </div>
           ))}
         </div>
 
-        {/* Closing CTA band */}
-        <div className="mt-20 overflow-hidden rounded-2xl bg-navy-900 p-10 sm:p-14">
-          <div className="grid gap-8 lg:grid-cols-3 lg:items-center">
+        {/* Closing CTA band — schematic, edge-to-edge */}
+        <div className="relative mt-24 overflow-hidden border border-navy-500 bg-navy-950">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 opacity-[0.05]"
+            style={{
+              backgroundImage:
+                "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
+              backgroundSize: "32px 32px",
+            }}
+          />
+          <Crosshair color="text-accent-500" />
+          <div className="relative grid gap-10 p-10 sm:p-14 lg:grid-cols-3 lg:items-center">
             <div className="lg:col-span-2">
-              <p className="eyebrow-on-dark">Ready to align?</p>
-              <h3 className="mt-3 font-display text-3xl font-semibold text-white sm:text-4xl">
+              <p className="mono-label">[ READY TO ALIGN ]</p>
+              <h3 className="mt-4 font-display text-3xl font-semibold leading-tight text-white sm:text-4xl">
                 Open a confidential conversation with <PCName />.
               </h3>
-              <p className="mt-4 max-w-2xl text-slate-300">
+              <p className="mt-5 max-w-2xl text-slate-300">
                 For Tier-1 generators, regulatory counsel, and institutional
                 sponsors evaluating behind-the-meter co-location at
                 utility-scale solar and BESS sites worldwide.
@@ -137,7 +136,7 @@ export default function SustainabilitySection() {
             </div>
             <div className="flex lg:justify-end">
               <a href="/contact" className="btn-primary">
-                Partner With Us →
+                Partner With Us
               </a>
             </div>
           </div>

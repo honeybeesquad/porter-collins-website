@@ -1,18 +1,16 @@
 import type { Metadata } from "next";
-import { Lexend, Source_Sans_3 } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const lexend = Lexend({
+const geistSans = Geist({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-lexend",
+  variable: "--font-geist-sans",
   display: "swap",
 });
 
-const sourceSans = Source_Sans_3({
+const geistMono = Geist_Mono({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-source-sans",
+  variable: "--font-geist-mono",
   display: "swap",
 });
 
@@ -45,7 +43,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${lexend.variable} ${sourceSans.variable}`}
+      className={`${geistSans.variable} ${geistMono.variable}`}
     >
       <body>{children}</body>
     </html>

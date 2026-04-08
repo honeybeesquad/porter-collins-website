@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
-import Nav from "../components/Nav";
+import Crosshair from "../components/Crosshair";
 import Footer from "../components/Footer";
+import GridBackground from "../components/GridBackground";
+import Nav from "../components/Nav";
 import PCName from "../components/PCName";
+import SectionLabel from "../components/SectionLabel";
 
 export const metadata: Metadata = {
   title: "Partner With Us",
@@ -11,14 +14,17 @@ export const metadata: Metadata = {
 
 const TRACKS = [
   {
+    code: "01",
     label: "Project inquiries",
     body: "Site identification, MW sizing, deployment timelines, and PPA structure for behind-the-meter co-location.",
   },
   {
+    code: "02",
     label: "Regulatory & legal review",
     body: "Self-supply framework documentation, jurisdiction-specific positioning, and system operator coordination for counsel and compliance teams.",
   },
   {
+    code: "03",
     label: "Technical due diligence",
     body: "Load profile data, dispatch logs, hard shutoff verification, and integration specs for your engineering team.",
   },
@@ -28,32 +34,26 @@ export default function ContactPage() {
   return (
     <>
       <Nav />
-      <main className="bg-white">
-        {/* Top hero strip */}
+      <main className="bg-navy-900">
+        {/* Hero strip */}
         <section
           aria-labelledby="contact-title"
-          className="relative overflow-hidden bg-navy-900 pt-32 pb-20 sm:pt-40 sm:pb-28"
+          className="relative overflow-hidden bg-navy-950 pt-36 pb-24 sm:pt-44 sm:pb-32"
         >
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-0 opacity-[0.06]"
-            style={{
-              backgroundImage:
-                "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
-              backgroundSize: "64px 64px",
-              maskImage:
-                "radial-gradient(ellipse 70% 60% at 50% 30%, black 40%, transparent 100%)",
-            }}
-          />
+          <div className="freq-line" aria-hidden="true" />
+          <GridBackground intensity="medium" size={72} />
+
           <div className="container-px relative">
-            <p className="eyebrow-on-dark">Contact</p>
+            <SectionLabel index="07" text="Contact" />
             <h1
               id="contact-title"
-              className="mt-5 max-w-3xl font-display text-4xl font-semibold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl"
+              className="mt-8 max-w-4xl font-display text-mega-sm font-semibold leading-[0.92] tracking-[-0.035em] text-white sm:text-mega lg:text-mega-lg"
             >
-              Partner With Us.
+              Partner
+              <br />
+              With Us<span className="text-accent-500">.</span>
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">
+            <p className="mt-10 max-w-2xl text-lg leading-relaxed text-slate-300 sm:text-xl">
               <PCName /> works directly with Tier-1 renewable energy
               operators, their counsel, and institutional sponsors evaluating
               behind-the-meter flexible compute at utility-scale solar and
@@ -63,42 +63,46 @@ export default function ContactPage() {
         </section>
 
         {/* Email block */}
-        <section className="py-20 sm:py-28">
+        <section className="border-t border-navy-600 py-24 sm:py-32">
           <div className="container-px">
-            <div className="mx-auto max-w-3xl rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center shadow-card sm:p-12">
-              <p className="font-display text-[12px] font-medium uppercase tracking-eyebrow text-accent-600">
-                Direct line
-              </p>
-              <h2 className="mt-3 font-display text-2xl font-semibold text-navy-900 sm:text-3xl">
-                Reach the <PCName /> partnerships team
+            <div className="relative mx-auto max-w-3xl border border-navy-500 bg-navy-950 p-10 text-center sm:p-14">
+              <Crosshair color="text-accent-500" />
+
+              <p className="mono-label">[ DIRECT LINE ]</p>
+              <h2 className="mt-5 font-display text-2xl font-semibold leading-tight text-white sm:text-3xl">
+                Reach the <PCName /> partnerships team.
               </h2>
-              <p className="mt-4 text-slate-600">
+              <p className="mt-4 text-slate-400">
                 Email is the fastest path. We respond within two business
                 days.
               </p>
               <a
                 href="mailto:contact@portercollins.com"
-                className="btn-primary mt-8 text-base"
+                className="btn-primary mt-10 text-[12px] sm:text-[13px]"
               >
                 contact@portercollins.com
               </a>
             </div>
 
             {/* Tracks */}
-            <div className="mx-auto mt-16 max-w-4xl">
-              <p className="text-center font-display text-[12px] font-medium uppercase tracking-eyebrow text-slate-500">
-                Please indicate your inquiry track
+            <div className="mx-auto mt-20 max-w-5xl">
+              <p className="text-center mono-label-dim">
+                [ INDICATE YOUR INQUIRY TRACK ]
               </p>
-              <div className="mt-8 grid gap-5 sm:grid-cols-3">
+              <div className="mt-10 grid gap-px sm:grid-cols-3">
                 {TRACKS.map((t) => (
                   <div
-                    key={t.label}
-                    className="rounded-xl border border-slate-200 bg-white p-6"
+                    key={t.code}
+                    className="schematic-card min-h-[200px]"
                   >
-                    <h3 className="font-display text-base font-semibold text-navy-900">
+                    <Crosshair />
+                    <div className="font-mono text-[11px] font-semibold uppercase tracking-widest text-accent-500 tabular">
+                      [ {t.code} ]
+                    </div>
+                    <h3 className="mt-4 font-display text-base font-semibold text-white">
                       {t.label}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                    <p className="mt-3 text-sm leading-relaxed text-slate-400">
                       {t.body}
                     </p>
                   </div>

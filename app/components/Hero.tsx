@@ -1,51 +1,51 @@
 import Link from "next/link";
+import GridBackground from "./GridBackground";
+import MonoStat from "./MonoStat";
 import PCName from "./PCName";
+import SectionLabel from "./SectionLabel";
 
 export default function Hero() {
   return (
     <section
       aria-labelledby="hero-title"
-      className="relative overflow-hidden bg-navy-900 pt-32 sm:pt-36 lg:pt-44"
+      className="relative overflow-hidden bg-navy-950 pt-36 sm:pt-40 lg:pt-48"
     >
-      {/* Subtle grid background */}
+      {/* Frequency scanner line at the very top — subtle pulsing accent */}
+      <div className="freq-line" aria-hidden="true" />
+
+      {/* Schematic grid */}
+      <GridBackground intensity="medium" size={72} />
+
+      {/* Accent radial bloom */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-[0.07]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
-          backgroundSize: "64px 64px",
-          maskImage:
-            "radial-gradient(ellipse 80% 60% at 50% 30%, black 40%, transparent 100%)",
-        }}
-      />
-      {/* Accent radial */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-24 right-[-10%] h-[520px] w-[520px] rounded-full bg-accent-500/10 blur-3xl"
+        className="pointer-events-none absolute -top-32 right-[-15%] h-[640px] w-[640px] rounded-full bg-accent-500/10 blur-[140px]"
       />
 
       <div className="container-px relative">
-        <p className="eyebrow-on-dark">
-          Behind-the-Meter Flexible Compute for Utility-Scale Renewables
-        </p>
+        <div className="reveal reveal-1">
+          <SectionLabel
+            index="01"
+            text="Behind-the-Meter Flexible Compute · Utility-Scale Renewables"
+          />
+        </div>
+
         <h1
           id="hero-title"
-          className="mt-5 max-w-4xl font-display text-[40px] font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[64px]"
+          className="reveal reveal-2 mt-10 max-w-[1100px] font-display text-mega-sm font-semibold leading-[0.92] tracking-[-0.035em] text-white sm:text-mega lg:text-mega-lg"
         >
-          Monetizing Stranded Power.
-          <br className="hidden sm:block" />
-          <span className="text-white">Stabilizing the </span>
+          Monetizing
+          <br />
+          Stranded Power.
+          <br />
           <span className="relative inline-block">
-            <span className="relative z-10 text-white">Grid.</span>
-            <span
-              aria-hidden="true"
-              className="absolute inset-x-0 bottom-1 -z-0 h-3 bg-accent-500/50"
-            />
+            Stabilizing the
+            <span className="text-white"> Grid</span>
+            <span className="text-accent-500">.</span>
           </span>
         </h1>
 
-        <p className="mt-7 max-w-3xl text-lg leading-relaxed text-slate-300 sm:text-xl">
+        <p className="reveal reveal-3 mt-10 max-w-2xl text-lg leading-relaxed text-slate-300 sm:text-xl">
           <PCName /> builds Active Dispatchable compute loads that
           co-locate behind the meter with utility-scale solar and battery
           storage. We transform{" "}
@@ -54,44 +54,46 @@ export default function Hero() {
           your capacity payments.
         </p>
 
-        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+        <div className="reveal reveal-4 mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
           <Link href="/contact" className="btn-primary">
-            Partner With Us →
+            Partner With Us
           </Link>
           <Link href="#solution" className="btn-secondary">
-            View Our Architecture
+            View Architecture →
           </Link>
         </div>
 
-        {/* Stat strip */}
-        <div className="mt-20 grid gap-px rounded-xl border border-navy-700 bg-navy-700 sm:grid-cols-3 lg:mt-24">
-          <div className="bg-navy-900 p-7">
-            <p className="font-display text-3xl font-semibold text-white sm:text-4xl">
-              TWh-scale
-            </p>
-            <p className="mt-2 text-sm text-slate-400">
-              Annual solar curtailment in every mature solar grid
-            </p>
-          </div>
-          <div className="bg-navy-900 p-7">
-            <p className="font-display text-3xl font-semibold text-white sm:text-4xl">
-              0 MW <span className="text-accent-500">·</span> Evening Peak
-            </p>
-            <p className="mt-2 text-sm text-slate-400">
-              Guaranteed hard shutoff during net-peak hours
-            </p>
-          </div>
-          <div className="bg-navy-900 p-7">
-            <p className="font-display text-3xl font-semibold text-white sm:text-4xl">
-              Behind the Meter
-            </p>
-            <p className="mt-2 text-sm text-slate-400">
-              Co-located, zero grid withdrawal during operation
-            </p>
-          </div>
+        {/* Oscilloscope stat readout */}
+        <div className="reveal reveal-5 mt-24 grid gap-px sm:grid-cols-3 lg:mt-32">
+          <MonoStat
+            index="01"
+            value="TWh-scale"
+            label="Annual solar curtailment in every mature solar grid"
+            meta={{ tag: "SCOPE", text: "global" }}
+          />
+          <MonoStat
+            index="02"
+            value={
+              <>
+                0 MW
+                <span className="text-accent-500"> · </span>
+                <span className="block text-[0.55em] sm:inline sm:text-inherit">
+                  18:00–22:00
+                </span>
+              </>
+            }
+            label="Guaranteed hard shutoff during evening net-peak hours"
+            meta={{ tag: "PROTOCOL", text: "scheduled · daily" }}
+          />
+          <MonoStat
+            index="03"
+            value="BTM"
+            label="Co-located behind the meter, zero grid withdrawal during operation"
+            meta={{ tag: "TOPOLOGY", text: "private wire" }}
+          />
         </div>
 
-        <div className="h-24 sm:h-32" />
+        <div className="h-32 sm:h-40" />
       </div>
     </section>
   );
