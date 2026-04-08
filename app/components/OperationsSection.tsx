@@ -192,7 +192,7 @@ function DailyProfileChart() {
 
           {/* Y-axis tick labels */}
           <g
-            fontFamily="var(--font-geist-mono), monospace"
+            fontFamily="var(--font-mono), monospace"
             fontSize="10"
             fill="#5A6B86"
             textAnchor="end"
@@ -206,7 +206,7 @@ function DailyProfileChart() {
 
           {/* X-axis tick labels */}
           <g
-            fontFamily="var(--font-geist-mono), monospace"
+            fontFamily="var(--font-mono), monospace"
             fontSize="10"
             fill="#5A6B86"
             textAnchor="middle"
@@ -282,7 +282,7 @@ function DailyProfileChart() {
 
           {/* Annotation: PEAK SOLAR (above midday peak) */}
           <g
-            fontFamily="var(--font-geist-mono), monospace"
+            fontFamily="var(--font-mono), monospace"
             fontSize="9"
             fill="#F97316"
             textAnchor="middle"
@@ -306,7 +306,7 @@ function DailyProfileChart() {
 
           {/* Annotation: HARD SHUTOFF (label inside the orange band) */}
           <g
-            fontFamily="var(--font-geist-mono), monospace"
+            fontFamily="var(--font-mono), monospace"
             fontSize="9"
             fill="#FB923C"
             textAnchor="middle"
@@ -330,7 +330,7 @@ function DailyProfileChart() {
 
           {/* Annotation: BESS PEAK (cyan) */}
           <g
-            fontFamily="var(--font-geist-mono), monospace"
+            fontFamily="var(--font-mono), monospace"
             fontSize="9"
             fill="#38BDF8"
             textAnchor="end"
