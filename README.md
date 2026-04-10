@@ -2,64 +2,38 @@
 
 Institutional marketing site for Porter/Collins, an operator of behind-the-meter flexible compute (Bitcoin validators + HPC) co-located with utility-scale solar and battery storage globally.
 
-Stack: **Next.js 14 (App Router) · React 18 · TypeScript · Tailwind CSS**
+**Pure static HTML + CSS.** No build step, no Node, no framework. Open `index.html` in any browser or serve from any webserver.
 
-## Local development
+## Files
 
-```bash
-npm install
-npm run dev
 ```
-
-Visit `http://localhost:3000`.
-
-## Production build
-
-```bash
-npm run build
-npm run start
+index.html      Homepage (6 sections + nav + footer)
+contact.html    /contact page
+styles.css      All styles (Inter Tight + JetBrains Mono via Google Fonts CDN)
+logo.png        Porter/Collins logo
+Logo.png        Original logo file
+README.md       This file
 ```
 
 ## Deploy
 
-### Vercel (recommended)
-1. Push this directory to a Git repo
-2. Import the repo at https://vercel.com/new
-3. Framework preset auto-detects as **Next.js** — no env vars required
-4. Deploy
+### Any webserver (nginx, apache, caddy)
+Point the document root at this directory. Done.
 
-### Netlify
-1. Push to a Git repo
-2. New site → import → build command `npm run build`, publish directory `.next`
-3. Add the **Next.js Runtime** plugin (Netlify auto-suggests it)
+### GitHub Pages
+Settings → Pages → Source: "Deploy from a branch" → Branch: `main`, folder: `/ (root)` → Save.
+
+### Quick local preview
+```bash
+python3 -m http.server 8000
+# then open http://localhost:8000
+```
 
 ## Customization
 
 | What | Where |
 |---|---|
-| Contact email | search `contact@portercollins.com` (used in `Footer.tsx`, `SustainabilitySection.tsx`, `app/contact/page.tsx`) |
-| Logo | replace `public/logo.png` (square works best) |
-| Brand colors | `tailwind.config.ts` → `theme.extend.colors.navy` and `accent` |
-| Fonts | `app/layout.tsx` → `next/font/google` imports |
-| Section copy | each section is its own component in `app/components/` |
-
-## File map
-
-```
-app/
-├── layout.tsx                  Root layout, fonts, metadata
-├── globals.css                 Tailwind base + design tokens
-├── page.tsx                    Homepage (composes 6 sections)
-├── contact/page.tsx            /contact route
-└── components/
-    ├── Nav.tsx                 Sticky nav, mobile menu
-    ├── Footer.tsx
-    ├── Hero.tsx                Section 1
-    ├── ProblemSection.tsx      Section 2 — Decoupling Crisis
-    ├── SolutionSection.tsx     Section 3 — Behind-the-Meter Solution
-    ├── OperationsSection.tsx   Section 4 — 15-min arbitrage + capacity guarantee
-    ├── PartnershipSection.tsx  Section 5 — Zero CAPEX / Asset Rotation
-    ├── SustainabilitySection.tsx  Section 6 — Sustainability & Grid Safety
-    ├── SectionHeading.tsx      Reusable eyebrow + title + lede
-    └── StatCard.tsx            Reusable metric block
-```
+| Contact email | search `contact@portercollins.com` in both HTML files |
+| Brand colors | CSS custom properties at top of `styles.css` |
+| Fonts | `@import url(...)` at top of `styles.css` |
+| Section copy | directly in the HTML |
