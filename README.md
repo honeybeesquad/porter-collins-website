@@ -33,7 +33,7 @@ python3 -m http.server 8000
 
 | What | Where |
 |---|---|
-| Contact email | search `contact@portercollins.com` in both HTML files |
+| Contact email | search `contact@portercollins.my` in both HTML files |
 | Brand colors | CSS custom properties at top of `styles.css` |
 | Fonts | `@import url(...)` at top of `styles.css` |
 | Section copy | directly in the HTML |
