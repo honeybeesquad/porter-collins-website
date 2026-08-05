@@ -1,5 +1,5 @@
 /* ============================================================
-   PORTER/COLLINS — Grid Schematic / Engineering Blueprint
+   PORTER/COLLINS/VILLAGRÁN — Grid Schematic / Engineering Blueprint
    Pure CSS, no build step, no preprocessor.
    Fonts: Inter Tight + JetBrains Mono via Google Fonts.
    ============================================================ */
@@ -381,7 +381,7 @@ section {
   align-items: center;
   gap: 12px;
 }
-.nav-brand .pc-tag {
+.nav-brand .pcv-tag {
   font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 500;
@@ -745,7 +745,7 @@ footer {
   gap: 0;
 }
 @media (min-width: 768px) {
-  .principals-grid { grid-template-columns: 1fr 1fr; }
+  .principals-grid { grid-template-columns: 1fr 1fr 1fr; }
 }
 
 .principal {

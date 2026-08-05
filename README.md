@@ -1,6 +1,6 @@
-# Porter/Collins — Corporate Website
+# Porter/Collins/Villagrán — Corporate Website
 
-Institutional marketing site for Porter/Collins, an operator of behind-the-meter flexible compute (Bitcoin validators + HPC) co-located with utility-scale solar and battery storage globally.
+Institutional marketing site for Porter/Collins/Villagrán, an operator of behind-the-meter flexible compute co-located with utility-scale solar and battery storage globally.
 
 **Pure static HTML + CSS.** No build step, no Node, no framework. Open `index.html` in any browser or serve from any webserver.
 
@@ -10,8 +10,8 @@ Institutional marketing site for Porter/Collins, an operator of behind-the-meter
 index.html      Homepage (6 sections + nav + footer)
 contact.html    /contact page
 styles.css      All styles (Inter Tight + JetBrains Mono via Google Fonts CDN)
-logo.png        Porter/Collins logo
-Logo.png        Original logo file
+og.png          Social sharing artwork
+Logo.png        Square PCV logo
 README.md       This file
 ```
 
@@ -33,7 +33,7 @@ python3 -m http.server 8000
 
 | What | Where |
 |---|---|
-| Contact email | search `contact@portercollins.my` in both HTML files |
+| Contact email | search `contact@portercollinsvillagran.tech` in both HTML files |
 | Brand colors | CSS custom properties at top of `styles.css` |
 | Fonts | `@import url(...)` at top of `styles.css` |
 | Section copy | directly in the HTML |
