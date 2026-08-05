@@ -11,7 +11,7 @@ index.html      Homepage (6 sections + nav + footer)
 contact.html    /contact page
 styles.css      All styles (Inter Tight + JetBrains Mono via Google Fonts CDN)
 og.png          Social sharing artwork
-Logo.png        Original logo file
+Logo.png        Square PCV logo
 README.md       This file
 ```
 
@@ -33,7 +33,7 @@ python3 -m http.server 8000
 
 | What | Where |
 |---|---|
-| Contact email | search `contact@portercollins.my` in both HTML files |
+| Contact email | search `contact@portercollinsvillagran.tech` in both HTML files |
 | Brand colors | CSS custom properties at top of `styles.css` |
 | Fonts | `@import url(...)` at top of `styles.css` |
 | Section copy | directly in the HTML |
