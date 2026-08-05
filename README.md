@@ -1,6 +1,6 @@
-# Porter/Collins — Corporate Website
+# Porter/Collins/Villagrán — Corporate Website
 
-Institutional marketing site for Porter/Collins, an operator of behind-the-meter flexible compute (Bitcoin validators + HPC) co-located with utility-scale solar and battery storage globally.
+Institutional marketing site for Porter/Collins/Villagrán, an operator of behind-the-meter flexible compute co-located with utility-scale solar and battery storage globally.
 
 **Pure static HTML + CSS.** No build step, no Node, no framework. Open `index.html` in any browser or serve from any webserver.
 
@@ -10,7 +10,7 @@ Institutional marketing site for Porter/Collins, an operator of behind-the-meter
 index.html      Homepage (6 sections + nav + footer)
 contact.html    /contact page
 styles.css      All styles (Inter Tight + JetBrains Mono via Google Fonts CDN)
-logo.png        Porter/Collins logo
+og.png          Social sharing artwork
 Logo.png        Original logo file
 README.md       This file
 ```
