@@ -1,39 +1,45 @@
-# Porter/Collins/Villagrán — Corporate Website
+# Porter/Collins/Villagrán (PCV) website
 
-Institutional marketing site for Porter/Collins/Villagrán, an operator of behind-the-meter flexible compute co-located with utility-scale solar and battery storage globally.
+Canonical site: <https://portercollinsvillagran.tech>
 
-**Pure static HTML + CSS.** No build step, no Node, no framework. Open `index.html` in any browser or serve from any webserver.
+Bilingual corporate site for Porter/Collins/Villagrán, focused on behind-the-meter flexible compute co-located with utility-scale renewable generation.
 
-## Files
+**Static HTML, CSS, and small inline scripts.** There is no application build step or framework.
 
-```
-index.html      Homepage (6 sections + nav + footer)
-contact.html    /contact page
-styles.css      All styles (Inter Tight + JetBrains Mono via Google Fonts CDN)
-og.png          Social sharing artwork
-Logo.png        Square PCV logo
-README.md       This file
-```
+## Pages
 
-## Deploy
+| URL | Source |
+|---|---|
+| `/` | `index.html` |
+| `/contact` | `contact.html` |
+| `/es/` | `es/index.html` |
+| `/es/contact` | `es/contact.html` |
 
-### Any webserver (nginx, apache, caddy)
-Point the document root at this directory. Done.
+The contact CTA uses `contact@portercollinsvillagran.tech`.
 
-### GitHub Pages
-Settings → Pages → Source: "Deploy from a branch" → Branch: `main`, folder: `/ (root)` → Save.
+## Assets
 
-### Quick local preview
+- `styles.css` — site styles and responsive layout
+- `brand/pcv-lockup.svg` and `brand/pcv-lockup-reversed.svg` — current wordmarks
+- `favicon.svg` and `apple-touch-icon.png` — browser and home-screen icons
+- `og.png` — social sharing image
+- `Logo.png` — legacy bitmap retained for compatibility; current pages use the SVG wordmarks
+
+## Preview locally
+
 ```bash
 python3 -m http.server 8000
-# then open http://localhost:8000
 ```
 
-## Customization
+Then open <http://localhost:8000>. The clean contact URLs are provided by the production Caddy routing; for a basic local preview, the source files are also available as `/contact.html` and `/es/contact.html`.
 
-| What | Where |
-|---|---|
-| Contact email | search `contact@portercollinsvillagran.tech` in both HTML files |
-| Brand colors | CSS custom properties at top of `styles.css` |
-| Fonts | `@import url(...)` at top of `styles.css` |
-| Section copy | directly in the HTML |
+## Deployment
+
+Production is a static site served by Caddy and managed separately from GitHub. Do not assume a push to this repository deploys production; verify the active deployment path before relying on it. The root `vercel.json` is retained for Vercel preview configuration and does not change the production host.
+
+## Editing
+
+- English copy: `index.html`, `contact.html`
+- Spanish copy: `es/index.html`, `es/contact.html`
+- Colors, typography, and responsive rules: `styles.css`
+- The cookie/analytics consent banner is implemented in the page HTML; review its analytics loading behavior before changing it.
